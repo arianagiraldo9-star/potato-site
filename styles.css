@@ -1,0 +1,196 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Sora:wght@400;500;600;700&display=swap');
+
+:root {
+  --olive-leaf: #556B12;
+  --saddle-brown: #8C4C1A;
+  --golden-bronze: #C59823;
+  --jasmine: #F1D586;
+  --rich-mahogany: #311207;
+  --paper: #fffdf7;
+  --ink-muted: #65584c;
+  --line: rgba(49, 18, 7, 0.12);
+  --shadow: 0 18px 55px rgba(49, 18, 7, 0.09);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  background: #f4eedf;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: min(100% - 48px, 900px);
+  margin: 40px auto;
+  padding: clamp(28px, 6vw, 72px);
+  color: var(--rich-mahogany);
+  background: var(--paper);
+  border: 1px solid rgba(49, 18, 7, 0.06);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  font-family: 'Sora', sans-serif;
+  font-size: 15px;
+  line-height: 1.85;
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3 {
+  color: var(--rich-mahogany);
+  font-family: 'Fraunces', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.2;
+  scroll-margin-top: 24px;
+}
+
+h1 {
+  margin: 0 0 1.25em;
+  padding: 0 0 0.55em;
+  border-bottom: 3px solid var(--golden-bronze);
+  font-size: clamp(2.35rem, 6vw, 4rem);
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  margin: 2.7em 0 0.8em;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid var(--line);
+  color: var(--olive-leaf);
+  font-size: clamp(1.65rem, 4vw, 2.25rem);
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  margin: 1.8em 0 0.55em;
+  color: var(--saddle-brown);
+  font-size: clamp(1.25rem, 3vw, 1.55rem);
+}
+
+p { margin: 0 0 1.15em; }
+strong { color: var(--saddle-brown); font-weight: 700; }
+em { color: #6c4b2b; }
+
+blockquote {
+  margin: 0 0 2em;
+  padding: 20px 24px;
+  border: 0;
+  border-left: 5px solid var(--golden-bronze);
+  border-radius: 0 16px 16px 0;
+  background: #fbf3dc;
+  color: #59422a;
+}
+
+blockquote p:last-child { margin-bottom: 0; }
+
+a {
+  color: var(--olive-leaf);
+  font-weight: 600;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover { color: var(--saddle-brown); }
+a:focus-visible { outline: 3px solid var(--golden-bronze); outline-offset: 4px; border-radius: 3px; }
+
+ul, ol { margin: 0 0 1.4em; padding-left: 1.5em; }
+li { padding-left: 0.25em; margin: 0.4em 0; }
+li::marker { color: var(--golden-bronze); font-weight: 700; }
+
+hr { height: 1px; margin: 2.5em 0; border: 0; background: var(--line); }
+
+ table {
+  display: block;
+  width: 100%;
+  margin: 1.5em 0 2em;
+  overflow-x: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fffefa;
+}
+
+thead { background: #f7edcf; }
+th, td { min-width: 130px; padding: 12px 16px; text-align: left; }
+th { color: var(--rich-mahogany); font-weight: 700; }
+td { border-top: 1px solid var(--line); }
+th + th, td + td { border-left: 1px solid var(--line); }
+
+code, pre {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+code { padding: 0.15em 0.4em; border-radius: 6px; background: #f5eddb; }
+pre { max-width: 100%; padding: 18px; overflow-x: auto; border-radius: 14px; background: #f5eddb; }
+img { max-width: 100%; height: auto; border-radius: 16px; }
+
+@media (max-width: 640px) {
+  html { background: var(--paper); }
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 28px 20px 40px;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+    line-height: 1.75;
+  }
+  h1 { font-size: clamp(2.2rem, 11vw, 3rem); }
+  h2 { margin-top: 2.2em; }
+  blockquote { padding: 16px 18px; }
+  th, td { min-width: 115px; padding: 10px 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* Page controls and nutrition calculator */
+.site-tools { display: flex; justify-content: flex-end; margin: 0 0 1.5rem; }
+.theme-toggle, .calculate-button {
+  min-height: 44px; padding: 0.7rem 1rem; border: 0; border-radius: 999px;
+  background: var(--olive-leaf); color: #fff; font: 600 0.9rem 'Sora', sans-serif; cursor: pointer;
+}
+.theme-toggle:hover, .calculate-button:hover { background: var(--saddle-brown); }
+.theme-toggle:focus-visible, .calculate-button:focus-visible, input:focus-visible, select:focus-visible { outline: 3px solid var(--golden-bronze); outline-offset: 3px; }
+.nutrition-calculator {
+  margin: 3rem 0 1rem; padding: clamp(20px, 5vw, 36px); border: 1px solid var(--line);
+  border-radius: 22px; background: #fbf3dc; color: var(--rich-mahogany);
+}
+.nutrition-calculator h2 { margin-top: 0; }
+.nutrition-form { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(150px, 1fr) auto; gap: 16px; align-items: end; }
+.calculator-field { display: grid; gap: 7px; }
+.calculator-field label { font-weight: 700; }
+.calculator-field input, .calculator-field select {
+  width: 100%; min-height: 46px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px;
+  background: var(--paper); color: var(--rich-mahogany); font: inherit;
+}
+.calculator-field small, .nutrition-note { color: var(--ink-muted); font-size: 0.82rem; }
+.nutrition-status { min-height: 1.5em; margin: 1rem 0 0; color: var(--saddle-brown); }
+.nutrition-status:empty { display: none; }
+.nutrition-results { margin-top: 1.25rem; padding: 20px; border-radius: 16px; background: var(--paper); }
+.nutrition-results h3 { margin-top: 0; }
+.nutrient-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; margin: 0; }
+.nutrient-list div { display: flex; justify-content: space-between; gap: 12px; padding: 10px 4px; border-bottom: 1px solid var(--line); }
+.nutrient-list dt { font-weight: 600; }
+.nutrient-list dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
+.nutrition-note { margin: 1rem 0 0; }
+body[data-theme="dark"] {
+  --paper: #211a14; --rich-mahogany: #f5ead4; --ink-muted: #c5b8a5; --line: rgba(241, 213, 134, 0.2);
+  --olive-leaf: #c4d778; --saddle-brown: #e2a46f; --golden-bronze: #d6b24e;
+  background: #17120e !important; color: var(--rich-mahogany) !important;
+}
+body[data-theme="dark"] h1, body[data-theme="dark"] h2, body[data-theme="dark"] h3,
+body[data-theme="dark"] p, body[data-theme="dark"] li, body[data-theme="dark"] strong,
+body[data-theme="dark"] em, body[data-theme="dark"] th, body[data-theme="dark"] td,
+body[data-theme="dark"] blockquote { color: var(--rich-mahogany); }
+body[data-theme="dark"] blockquote, body[data-theme="dark"] .nutrition-calculator { background: #30251a; }
+body[data-theme="dark"] table, body[data-theme="dark"] thead, body[data-theme="dark"] .nutrition-results { background: #261e17; }
+body[data-theme="dark"] input, body[data-theme="dark"] select { background: #211a14; color: var(--rich-mahogany); }
+body[data-theme="dark"] .theme-toggle, body[data-theme="dark"] .calculate-button { background: var(--olive-leaf); color: #211a14; }
+@media (max-width: 700px) {
+  .nutrition-form { grid-template-columns: 1fr; }
+  .calculate-button { width: 100%; }
+  .nutrient-list { grid-template-columns: 1fr; }
+  .site-tools { justify-content: stretch; }
+  .theme-toggle { width: 100%; }
+}
